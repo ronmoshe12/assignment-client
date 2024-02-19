@@ -1,0 +1,20 @@
+
+.title{
+  text-align: left;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-buttons{
+  display: flex;
+  gap: 10px;
+}
+
+.card-content{
+  padding: 10px;
+  margin-left: 10px;
+}

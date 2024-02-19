@@ -1,0 +1,30 @@
+@import "src/styles/elements.scss";
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: $colorLightBlue;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 150px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+}

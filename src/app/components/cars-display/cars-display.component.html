@@ -1,0 +1,12 @@
+<div>
+  <h2>All Cars ({{totalCars}})</h2>
+  <div class="cars-container">
+    <app-general-card
+      *ngFor="let car of cars"
+      [cardData]="car"
+      (edit)="onEditCar($event)"
+      (delete)="onDeleteCar($event)">
+    >
+    </app-general-card>
+  </div>
+</div>

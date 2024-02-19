@@ -1,0 +1,26 @@
+@import "src/styles/elements.scss";
+.footer {
+  width: 100%;
+  background-color: $colorDarkBlue;
+  border-top: 1px solid #e7e7e7;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 20px;
+}
+
+:host{
+  p{
+    color: $colorWhite;
+  };
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 0 10px;
+  }
+}

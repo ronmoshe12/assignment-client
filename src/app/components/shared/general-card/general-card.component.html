@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title class="title">{{ cardData?.vin }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="card-content">
+    <p><strong>Brand:</strong> {{ cardData?.brand }}</p>
+    <p><strong>Model:</strong> {{ cardData?.model }}</p>
+    <p><strong>Year:</strong> {{ cardData?.year }}</p>
+    <p><strong>Color:</strong> {{ cardData?.color }}</p>
+    <p><strong>Mileage:</strong> {{ cardData?.mileage }} miles</p>
+    <p><strong>Engine Type:</strong> {{ cardData?.engine?.type }}</p>
+    <p><strong>Displacement:</strong> {{ cardData?.engine?.displacement }}</p>
+    <p><strong>Fuel Type:</strong> {{ cardData?.engine?.fuelType }}</p>
+  </mat-card-content>
+  <div class="card-footer">
+    <div class="footer-buttons">
+      <app-button
+        [buttonText]="'Edit'"
+        (click)="edit.emit(cardData)">
+      </app-button>
+      <app-button
+        [buttonText]="'Delete'"
+        (click)="delete.emit(cardData?.id)">
+      </app-button>
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,17 @@
+@import "src/styles/elements.scss";
+.app-container {
+  display: flex;
+  flex-direction: column;
+  background-color: $colorLightGray;
+  min-height: 100vh;
+}
+
+.content-area {
+  margin-top: 30px;
+  margin-left: 20px;
+  flex-grow: 1;
+
+  @media (max-width: 600px) {
+    margin-left: 0;
+  }
+}
