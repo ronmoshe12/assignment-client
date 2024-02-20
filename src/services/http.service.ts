@@ -102,7 +102,6 @@ export class HttpService {
   postRequest<T>(
     endpoint: string,
     body: Object,
-    authorization?: string | null,
     successMessage?: string,
   ): Observable<T | any | ErrorResponseType> {
     let headers = this.buildHeaders();

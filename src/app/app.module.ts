@@ -16,6 +16,8 @@ import { ButtonComponent } from './components/shared/button/button.component';
 import { CarsDisplayComponent } from './components/cars-display/cars-display.component';
 import {ToastrModule} from "ngx-toastr";
 import {SharedModule} from "./components/shared/shared.module";
+import { CreateCarComponent } from './components/create-car/create-car.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import {SharedModule} from "./components/shared/shared.module";
     HeaderComponent,
     FooterComponent,
     GeneralCardComponent,
-    CarsDisplayComponent
+    CarsDisplayComponent,
+    CreateCarComponent
   ],
   imports: [
     SharedModule,
@@ -38,6 +41,7 @@ import {SharedModule} from "./components/shared/shared.module";
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

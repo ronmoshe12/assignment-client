@@ -1,6 +1,6 @@
-<mat-card xmlns="http://www.w3.org/1999/html">
+<mat-card>
   <mat-card-header>
-    <mat-card-title>Edit Car {{ car?.vin }}</mat-card-title>
+    <mat-card-title>Create New Car</mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
@@ -14,7 +14,7 @@
         <app-button
           (click)="onSaveCar()"
           [disabled]="!carForm.valid"
-          [buttonText]="'Save'">
+          [buttonText]="'Add Car'">
         </app-button>
       </div>
     </form>

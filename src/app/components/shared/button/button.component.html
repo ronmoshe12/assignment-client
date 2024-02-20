@@ -1,1 +1,4 @@
-<button class="button-common" [disabled]="disabled">{{buttonText}}</button>
+<button class="button-common" [disabled]="disabled">
+  <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
+  {{ buttonText }}
+</button>

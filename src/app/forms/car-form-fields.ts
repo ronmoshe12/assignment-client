@@ -3,6 +3,12 @@ import { CarFormField } from './car-form-field.interface';
 
 export const CarFormFields: CarFormField[] = [
   {
+    label: 'Vin',
+    controlName: 'vin',
+    validators: [Validators.required],
+    type: 'text',
+  },
+  {
     label: 'Brand',
     controlName: 'brand',
     validators: [Validators.required],
@@ -29,26 +35,7 @@ export const CarFormFields: CarFormField[] = [
   {
     label: 'Mileage',
     controlName: 'mileage',
-    validators: [Validators.required, Validators.min(0)],
+    validators: [Validators.required],
     type: 'number',
-  },
-  {
-    label: 'Engine Type',
-    controlName: 'engine.type',
-    validators: [Validators.required],
-    type: 'text',
-  },
-  {
-    label: 'Engine Displacement',
-    controlName: 'engine.displacement',
-    validators: [Validators.required],
-    type: 'text',
-
-  },
-  {
-    label: 'Fuel Type',
-    controlName: 'engine.fuelType',
-    validators: [Validators.required],
-    type: 'text',
   },
 ];

@@ -3,7 +3,7 @@ import {ConstPath} from "./const-path";
 
 export const ICONS: IconType[] = [
     {
-        name: 'elbitIcon',
-        path: ''
+        name: 'addCircle',
+        path: ConstPath.ADD_CIRCLE
     },
   ];

@@ -4,6 +4,7 @@ import {Car, CarPayload} from "../../../types/car.model";
 import {CarFormFields} from "../../../forms/car-form-fields";
 import {Router} from "@angular/router";
 import {CarsService} from "../../../../services/cars.service";
+import {CarFormService} from "../../../../services/car-form.service";
 
 
 @Component({
@@ -18,11 +19,14 @@ export class EditCarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCar();
-    this.carForm = this.createFormGroup();
+    this.carForm = this.carFormService.createFormGroup();
     this.patchFormValues();
   }
 
-  constructor(private router: Router, private carsService: CarsService) {
+  constructor(private router: Router,
+              private carsService: CarsService,
+              private carFormService: CarFormService
+  ) {
   }
 
   getCar() {
@@ -33,15 +37,6 @@ export class EditCarComponent implements OnInit {
     } else {
       this.car = params.car;
     }
-  }
-
-  createFormGroup(): FormGroup {
-    const group: any = {};
-    CarFormFields.forEach(field => {
-      group[field.controlName] = new FormControl('', field.validators);
-    });
-
-    return new FormGroup(group);
   }
 
   patchFormValues(): void {

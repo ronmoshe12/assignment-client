@@ -1,0 +1,5 @@
+<div class="form-field" [formGroup]="form">
+  <label>{{ field.label }}</label>
+  <input *ngIf="field.type === 'text'" type="text" [formControlName]="field.controlName">
+  <input *ngIf="field.type === 'number'" type="number" [formControlName]="field.controlName">
+</div>

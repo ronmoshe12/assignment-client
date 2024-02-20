@@ -21,4 +21,8 @@ export class CarsService {
   editCar(car: CarPayload) {
     return this.httpService.putRequest(`${this.apiController}/update`, car, "Car updated successfully");
   }
+
+  addCar(car: CarPayload) {
+    return this.httpService.postRequest(`${this.apiController}/create`, car, "Car added successfully");
+  }
 }

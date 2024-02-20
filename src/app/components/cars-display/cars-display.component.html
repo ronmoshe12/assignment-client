@@ -1,5 +1,10 @@
 <div>
   <h2>All Cars ({{totalCars}})</h2>
+  <app-button class="button"
+    [buttonText]="'Add Car'"
+    (click)="onAddCar()"
+  >
+  </app-button>
   <div class="cars-container">
     <app-general-card
       *ngFor="let car of cars"

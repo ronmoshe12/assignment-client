@@ -49,6 +49,10 @@ export class CarsDisplayComponent implements OnInit {
     this.router.navigate([ROUTE_PATHS.EDIT_CAR], { state: { car: car } });
   }
 
+  onAddCar() {
+    this.router.navigate([ROUTE_PATHS.ADD_CAR]);
+  }
+
 
 
 }
