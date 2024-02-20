@@ -74,30 +74,6 @@ export class HttpService {
   }
 
 
-  public getRequestWithParams<T>(type: string, params?: any): Observable<T | any> {
-    const options: RequestOptions = {
-      headers: this.buildHeaders(),
-    };
-    if (params) {
-      options['params'] = params;
-    }
-    return this.httpClient
-      .get<T>(`${this.apiUrl}/${type}`, options)
-      .pipe(catchError(this.handleError.bind(this)));
-  }
-
-  getRequestWithQueryParams<T>(type: string, params: any): Observable<T | any> {
-    const options = {
-      headers: this.buildHeaders(),
-    };
-
-    const queryParams = this.buildQueryParams(params);
-
-    return this.httpClient
-      .get<T>(`${this.apiUrl}/${type}?${queryParams}`, options)
-      .pipe(catchError(this.handleError.bind(this)));
-  }
-
 
   postRequest<T>(
     endpoint: string,
@@ -109,26 +85,6 @@ export class HttpService {
 
     return this.httpClient
       .post<T>(`${this.apiUrl}/${endpoint}`, body, {headers})
-      .pipe(
-        tap(() => {
-          if (successMessage) {
-            this.toastr.success(successMessage);
-          }
-        }),
-        catchError(this.handleError)
-      );
-  }
-
-
-  formPostRequest<T>(
-    endpoint: string,
-    formData: FormData,
-    authorization?: string | null,
-    successMessage?: string,
-  ): Observable<T | any | ErrorResponseType> {
-    let headers = this.buildHeaders(true);
-    return this.httpClient
-      .post<T>(`${this.apiUrl}/${endpoint}`, formData, {headers})
       .pipe(
         tap(() => {
           if (successMessage) {
@@ -156,27 +112,6 @@ export class HttpService {
     }
 
     return headers;
-  }
-
-  private buildQueryParams(params: { [key: string]: any }): string {
-    let queryParams = '';
-    if (params)
-      Object.keys(params).forEach((key) => {
-        if (params[key] !== null && params[key] !== undefined) {
-          if (queryParams !== '') {
-            queryParams += '&';
-          }
-          if (Array.isArray(params[key])) {
-            const arrayParams = params[key] as Array<any>;
-            arrayParams.forEach((value) => {
-              queryParams += `${encodeURIComponent(key)}=${encodeURIComponent(value)}&`;
-            });
-          } else {
-            queryParams += `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`;
-          }
-        }
-      });
-    return queryParams;
   }
 
   public handleError = (response: HttpErrorResponse) => {
